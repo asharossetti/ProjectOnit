@@ -1,3 +1,3 @@
-.vs
-./Service/bin
-./Service/obj
+.vs/*
+Service/bin/*
+Service/obj/*
