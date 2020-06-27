@@ -20,6 +20,11 @@ namespace Service.Pages.Cart
         {
             _context = context;
             Products = _context.Products.ToList();
+            Locations = _context.Locations.ToList();
+            StokPositions = _context.StokPositions.ToList();
+            //SelectedChecks = new List<string>();
+            //SelectedProductIds = new List<int>();
+            //SelectedQuatities = new List<int>();
         }
 
         public IActionResult OnGet()
@@ -30,35 +35,51 @@ namespace Service.Pages.Cart
         [BindProperty]
         public Model.Cart Cart { get; set; }
 
-        [BindProperty]
+        public List<Model.Location> Locations { get; set; }
+        public List<Model.StokPosition> StokPositions { get; set; }
         public List<Model.Product> Products { get; set; }
 
-        private List<Model.Product> SelectedProducts { get; set; }
 
         [BindProperty]
+        public int SelectedLocationId { get; set; }
+        [BindProperty]
+        public int SelectedStokPositionId { get; set; }
+        [BindProperty]
         public List<int> SelectedProductIds { get; set; }
+        [BindProperty]
+        public List<string> SelectedChecks { get; set; }
+        [BindProperty]
+        public List<int> SelectedQuatities { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+        { 
+            Cart.Location = _context.Locations.SingleOrDefault(l => l.Id == SelectedLocationId);
+            Cart.StokPosition = _context.StokPositions.SingleOrDefault(sp => sp.Id == SelectedStokPositionId);
 
-            SelectedProducts = _context.Products.Where(product=> SelectedProductIds.Contains(product.Id)).ToList();
+             //if (!ModelState.IsValid)
+             //{ 
+             //   return Page();
+             //}
 
+           
             var rows = new List<Model.Row>();
 
-            foreach(var selectedProduct in SelectedProducts)
+            int i = 0;
+            foreach(var id in SelectedProductIds)
             {
-                rows.Add(new Row
-                { 
-                    Cart= Cart,
-                    CreatedDate= DateTimeOffset.Now,
-                    Product= selectedProduct
-                });
+                if (SelectedChecks[i] == "1")
+                {
+                    rows.Add(new Row
+                    {
+                        Cart = Cart,
+                        CreatedDate = DateTimeOffset.Now,
+                        Product = _context.Products.SingleOrDefault(product => product.Id == id),
+                        Qantity = SelectedQuatities[i]
+                    });
+                }
+                i++;
             }
             Cart.CreatedDate = DateTimeOffset.Now;
             Cart.Rows = rows;

@@ -17,6 +17,9 @@ namespace Service.Data.Model
         public int Id { get; set; }
 
         [Required]
+        public int Qantity { get; set; }
+
+        [Required]
         public Product Product { get; set; }
 
         [Required]

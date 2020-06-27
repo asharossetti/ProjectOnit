@@ -20,5 +20,8 @@ namespace Service.Data
 
         public DbSet<Service.Data.Model.Cart> Carts { get; set; }
 
+
+        public DbSet<Service.Data.Model.StokPosition> StokPositions { get; set; }
+        public DbSet<Service.Data.Model.Location> Locations { get; set; }
     }
 }

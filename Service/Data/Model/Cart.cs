@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,10 +30,10 @@ namespace Service.Data.Model
         public DateTimeOffset CreatedDate {  get; set; }
 
         [Required]
-        public string StokPosition { get; set; }
+        public StokPosition StokPosition { get; set; }
 
         [Required]
-        public string Location { get; set; } 
+        public Location Location { get; set; }
 
         [NotMapped]
         public string Arrive { get { return  CreatedDate.ToString("YYYY")+"//"+Id ; } }
