@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Service.Data.Model
 {
@@ -13,19 +12,26 @@ namespace Service.Data.Model
             Rows = new List<Row>();
         }
 
+        [Required]
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public string Description { get; set; }
 
+        [Required]
         public string SerialNumber { get; set; }
+
         public List<Row> Rows { get; set; }
 
-        public DateTimeOffset CreatedDate {  get; set; } 
+        [Required]
+        public DateTimeOffset CreatedDate {  get; set; }
 
+        [Required]
         public string StokPosition { get; set; }
 
+        [Required]
         public string Location { get; set; } 
 
         [NotMapped]
