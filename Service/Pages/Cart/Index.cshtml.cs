@@ -23,7 +23,7 @@ namespace Service.Pages.Cart
 
         public async Task OnGetAsync()
         {
-            Cart = await _context.Carts.ToListAsync();
+            Cart = await _context.Carts.Include(x=>x.StokPosition).Include(x=>x.Location).ToListAsync();
         }
     }
 }

@@ -9,47 +9,86 @@
 
 <h4>Cart</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form method="post">
+    <div class="row">
+        <div class="col-md-4">
             <input type="hidden" asp-for="Cart.Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Cart.Name" class="control-label"></label>
+                <label asp-for="Cart.Name" class="control-label">Inserisci nome</label>
                 <input asp-for="Cart.Name" class="form-control" />
                 <span asp-validation-for="Cart.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cart.Description" class="control-label"></label>
+                <label asp-for="Cart.Description" class="control-label">Inserisci descrizione</label>
                 <input asp-for="Cart.Description" class="form-control" />
                 <span asp-validation-for="Cart.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cart.SerialNumber" class="control-label"></label>
+                <label asp-for="Cart.SerialNumber" class="control-label">Inserisci matricola</label>
                 <input asp-for="Cart.SerialNumber" class="form-control" />
                 <span asp-validation-for="Cart.SerialNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cart.CreatedDate" class="control-label"></label>
-                <input asp-for="Cart.CreatedDate" class="form-control" />
-                <span asp-validation-for="Cart.CreatedDate" class="text-danger"></span>
+                <label asp-for="SelectedStokPositionId" class="control-label">Seleziona area</label>
+                <select asp-for="SelectedStokPositionId" class="form-control">
+                    @foreach (var stokPosition in Model.StokPositions)
+                    {
+                        <option value='@stokPosition.Id'>  @stokPosition.Code </option>
+                    }
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="Cart.StokPosition" class="control-label"></label>
-                <input asp-for="Cart.StokPosition.Code" class="form-control" />
-                <span asp-validation-for="Cart.StokPosition.Code" class="text-danger"></span>
+                <label asp-for="SelectedLocationId" class="control-label">Seleziona posizione</label>
+                <select asp-for="SelectedLocationId" class="form-control">
+                    @foreach (var location in Model.Locations)
+                    {
+                        <option value='@location.Id'>  @location.Code </option>
+                    }
+                </select>
             </div>
-            <div class="form-group">
-                <label asp-for="Cart.Location" class="control-label"></label>
-                <input asp-for="Cart.Location.Code" class="form-control" />
-                <span asp-validation-for="Cart.Location.Code" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+
+        </div>
+        <div class="col-md-7">
+            <table class="table">
+                <tr>
+                    <th>Seleziona</th>
+                    <th>Codice</th>
+                    <th>Descrizione</th>
+                    <th>Quantità</th>
+                </tr>
+
+                @for (int i = 0; i < Model.Products.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @if (Model.PreSelectedChecks[i] == "checked")
+                            {
+                                <input type="checkbox" asp-for="SelectedChecks[i]" value="1" checked="@Model.PreSelectedChecks[i]" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" asp-for="SelectedChecks[i]" value="1"/>
+                            }
+                            </td>
+                       
+                        <td>@Model.Products[i].Code</td>
+                        <td>@Model.Products[i].Description</td>
+                        <td>
+                            <input type="number" asp-for="SelectedQuatities[i]" value="@Model.PreSelectedQuatities[i]" />
+                            <input type="hidden" asp-for="SelectedProductIds[i]" value="@Model.Products[i].Id" />
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
     </div>
-</div>
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
 
 <div>
     <a asp-page="./Index">Back to List</a>

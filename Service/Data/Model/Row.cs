@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Service.Data.Model 
-{ 
+namespace Service.Data.Model
+{
+    [DebuggerDisplay("{Product.Code} - {Qantity}")]
     public class Row
     {
-        public Row()
-        {
-            Product = new Product();
-        }
 
         [Required]
         public int Id { get; set; }
@@ -20,13 +18,17 @@ namespace Service.Data.Model
         public int Qantity { get; set; }
 
         [Required]
-        public Product Product { get; set; }
+        
+        public virtual Product Product { get; set; }
 
         [Required]
-        public Cart Cart { get; set; }
+        public virtual Cart Cart { get; set; }
 
 
         [Required]
         public DateTimeOffset CreatedDate { get; set; }
+
+        //[Required]
+        //public DateTimeOffset LastModifiedDate { get; set; }
     }
 }

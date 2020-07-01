@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace Service.Data.Model
 {
+    [DebuggerDisplay("{Code}")] 
     public class Product
     {
         [Required]

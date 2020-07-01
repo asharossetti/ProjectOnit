@@ -28,7 +28,7 @@ namespace Service.Pages.Cart
                 return NotFound();
             }
 
-            Cart = await _context.Carts.FirstOrDefaultAsync(m => m.Id == id);
+            Cart = await _context.Carts.Include(x => x.StokPosition).Include(x => x.Location).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Cart == null)
             {
