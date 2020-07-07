@@ -20,10 +20,17 @@ namespace Service.Pages.Cart
         }
 
         public IList<Model.Cart> Cart { get;set; }
-
+        public Model.Product Product { get; set; }
+        public Model.Row Row { get; set; }
         public async Task OnGetAsync()
         {
-            Cart = await _context.Carts.Include(x=>x.StokPosition).Include(x=>x.Location).ToListAsync();
+            Cart = await _context.Carts
+                .Include(x=>x.StokPosition)
+                .Include(x=>x.Location)
+                .Include(x=>x.Rows)
+                .ThenInclude(x=>x.Product)
+                .ToListAsync();
+
         }
     }
 }

@@ -58,12 +58,7 @@ namespace Service.Pages.Cart
             Cart.Location = _context.Locations.SingleOrDefault(l => l.Id == SelectedLocationId);
             Cart.StokPosition = _context.StokPositions.SingleOrDefault(sp => sp.Id == SelectedStokPositionId);
 
-             //if (!ModelState.IsValid)
-             //{ 
-             //   return Page();
-             //}
-
-           
+            var date = DateTimeOffset.Now;
             var rows = new List<Model.Row>();
 
             int i = 0;
@@ -74,14 +69,16 @@ namespace Service.Pages.Cart
                     rows.Add(new Row
                     {
                         Cart = Cart,
-                        CreatedDate = DateTimeOffset.Now,
+                        CreatedDate = date,
+                        LastModifiedDate=date,
                         Product = _context.Products.SingleOrDefault(product => product.Id == id),
-                        Qantity = SelectedQuatities[i]
+                        Quantity = SelectedQuatities[i]
                     });
                 }
                 i++;
             }
-            Cart.CreatedDate = DateTimeOffset.Now;
+            Cart.CreatedDate = date;
+            Cart.LastModifiedDate = date;
             Cart.Rows = rows;
 
             _context.Carts.Add(Cart);

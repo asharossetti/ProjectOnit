@@ -79,7 +79,7 @@ namespace Service.Pages.Cart
                 {
                     PreSelectedChecks.Add(Cart.Rows.Any(r=>r.Product.Code == product.Code) ? "checked" : "false");
                     PreSelectedProductIds.Add(product.Id);
-                    PreSelectedQuatities.Add(Cart.Rows.Any(r => r.Product.Code == product.Code) ? Cart.Rows.SingleOrDefault(r=>r.Product.Code==product.Code).Qantity : 0);
+                    PreSelectedQuatities.Add(Cart.Rows.Any(r => r.Product.Code == product.Code) ? Cart.Rows.SingleOrDefault(r=>r.Product.Code==product.Code).Quantity : 0);
                 }
             }
 
@@ -103,7 +103,7 @@ namespace Service.Pages.Cart
                 Cart.Location = _context.Locations.SingleOrDefault(l => l.Id == SelectedLocationId);
                 Cart.StokPosition = _context.StokPositions.SingleOrDefault(sp => sp.Id == SelectedStokPositionId);
                 int i = 0;
-
+                var date = DateTimeOffset.Now;
 
                 foreach (var product in Products)
                 {
@@ -113,16 +113,18 @@ namespace Service.Pages.Cart
                         {
                             var row = Cart.Rows.SingleOrDefault(r => r.Product.Code == product.Code);
                             row.Cart = Cart;
-                            row.Qantity = SelectedQuatities[i];
+                            row.Quantity = SelectedQuatities[i];
+                            row.LastModifiedDate = date;
                         }
                         else
                         {
                             Cart.Rows.Add(new Row
                             {
                                 Cart = Cart,
-                                CreatedDate = DateTimeOffset.Now,
+                                CreatedDate = date,
+                                LastModifiedDate= date,
                                 Product = _context.Products.SingleOrDefault(p => p.Code == product.Code),
-                                Qantity = SelectedQuatities[i]
+                                Quantity = SelectedQuatities[i]
                             });
                         }
                     }

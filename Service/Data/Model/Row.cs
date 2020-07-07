@@ -15,7 +15,7 @@ namespace Service.Data.Model
         public int Id { get; set; }
 
         [Required]
-        public int Qantity { get; set; }
+        public int Quantity { get; set; }
 
         [Required]
         
@@ -28,7 +28,7 @@ namespace Service.Data.Model
         [Required]
         public DateTimeOffset CreatedDate { get; set; }
 
-        //[Required]
-        //public DateTimeOffset LastModifiedDate { get; set; }
+        [Required]
+        public DateTimeOffset LastModifiedDate { get; set; }
     }
 }

@@ -149,16 +149,9 @@ C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Serv
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.RazorCoreGenerate.cache
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Create.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Delete.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Details.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Edit.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Index.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Location\Create.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Location\Delete.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Location\Details.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Location\Edit.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Location\Index.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Product\Create.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Product\Delete.cshtml.g.cs
@@ -167,11 +160,6 @@ C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Product\Index.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\StokPosition\Create.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\StokPosition\Delete.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\StokPosition\Details.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\StokPosition\Edit.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\StokPosition\Index.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.RazorTargetAssemblyInfo.cache
@@ -184,3 +172,5 @@ C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Serv
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.pdb
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.genruntimeconfig.cache
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Edit.cshtml.g.cs
+C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\ProductFromCart\Index.cshtml.g.cs

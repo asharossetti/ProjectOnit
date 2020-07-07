@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Cart[0].Arrive)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Cart[0].Name)
             </th>
             <th>
@@ -35,8 +38,12 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Cart) {
+        @foreach (var item in Model.Cart)
+        {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrive)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -57,10 +64,27 @@
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
-    </tbody>
-</table>
+            @if (item.Rows.Count > 0)
+            {
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Product)</th>
+                <th>@Html.DisplayNameFor(model => model.Row.Quantity)</th>
+            </tr>
+                @foreach (var riga in item.Rows)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => riga.Product.Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => riga.Quantity)
+                        </td>
+                    </tr> 
+                }
+            }
+        }
+        </tbody>
+    </table>

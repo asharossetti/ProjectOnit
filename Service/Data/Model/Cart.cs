@@ -30,8 +30,9 @@ namespace Service.Data.Model
 
         [Required]
         public DateTimeOffset CreatedDate {  get; set; }
-        //[Required]
-        //public DateTimeOffset LastModifiedDate { get; set; }
+
+        [Required]
+        public DateTimeOffset LastModifiedDate { get; set; }
 
         [Required]
         public virtual StokPosition StokPosition { get; set; }
@@ -40,6 +41,6 @@ namespace Service.Data.Model
         public virtual Location Location { get; set; }
 
         [NotMapped]
-        public string Arrive { get { return  CreatedDate.ToString("YYYY")+"//"+Id ; } }
+        public string Arrive { get { return  CreatedDate.ToString("yyyy") +"/"+Id ; }  }
     }
 }
