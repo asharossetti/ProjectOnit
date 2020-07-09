@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Service.Data.Model;
 using Model = Service.Data.Model;
 
-namespace Service.Pages.ProductFromCart
+namespace Service.Pages.Warehouse
 {
     public class IndexModel : PageModel
     {
@@ -20,24 +20,23 @@ namespace Service.Pages.ProductFromCart
             _context = context;
         }
 
-        public IList<ProductDTO> Products { get; set; }
+        public IList<Warehouse> Warehouses { get; set; }
 
         public async Task OnGetAsync()
         {
-            Products = new List<ProductDTO>();
+            Warehouses = new List<Warehouse>();
             foreach (var item in _context.Products)
             {
-                var productDto = new ProductDTO()
+                var warehouse = new Warehouse()
                 {
                     Code = item.Code,
-                    Note = item.Note,
                     Description = item.Description,
                 };
 
-                var pippo = await _context.Carts
+                var cart = await _context.Carts
                 .Where(x => x.Rows.Any(r=>r.Product.Code == item.Code))
                 .Select(x =>
-                        new CartRowDTO
+                        new WarehouseInfo
                         { 
                             Location= x.Location,
                             SerialNumber= x.SerialNumber,
@@ -46,9 +45,12 @@ namespace Service.Pages.ProductFromCart
                         }
                     ).ToListAsync();
 
-                productDto.CartRows = pippo;
-                productDto.Quantity = pippo.Sum(x=>x.Quantity);
-                Products.Add(productDto);
+                warehouse.CartRows = cart;
+                warehouse.TotalQuantity = cart.Sum(x=>x.Quantity);
+                if (warehouse.TotalQuantity > 0)
+                {
+                    Warehouses.Add(warehouse);
+                }
             }
             
         }
@@ -56,19 +58,18 @@ namespace Service.Pages.ProductFromCart
 
 
 
-    public class ProductDTO
+    public class Warehouse
     {
-        public ProductDTO()
+        public Warehouse()
         {
-            CartRows = new List<CartRowDTO>();
+            CartRows = new List<WarehouseInfo>();
         }
-        public int Quantity { get; set; }
+        public int TotalQuantity { get; set; }
         public string Code { get; set; }
         public string Description { get; set; }
-        public string Note { get; set; }
-        public List<CartRowDTO> CartRows { get; set; }
+        public List<WarehouseInfo> CartRows { get; set; }
     }
-    public class CartRowDTO
+    public class WarehouseInfo
     {
         public string SerialNumber { get; set; }
         public StokPosition StokPosition { get; set; }

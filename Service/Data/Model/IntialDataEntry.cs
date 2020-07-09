@@ -14,7 +14,7 @@ namespace Service.Data.Model
             using (var context = new ServiceContext(serviceProvider.GetRequiredService<DbContextOptions<ServiceContext>>()))
             {
                 // Look for any movies.
-                if (context.Locations.Any() && context.StokPositions.Any() && context.Products.Any())
+                if (context.Locations.Any() && context.StokPositions.Any() && context.Products.Any() && context.Carts.Any())
                 {
                     return;   // DB has been seeded
                 }

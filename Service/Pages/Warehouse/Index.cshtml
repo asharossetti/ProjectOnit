@@ -1,0 +1,49 @@
+﻿@page
+@model Service.Pages.Warehouse.IndexModel
+
+@{
+    ViewData["Title"] = "Warehouse";
+}
+
+    <h1>Warehouse</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>@foreach (var item in Model.Warehouses)
+{
+    <table class="table table-bordered mb-3">
+        <tbody>
+
+            <tr>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => item.TotalQuantity):</strong> @Html.DisplayFor(modelItem => item.TotalQuantity)
+                </td>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => item.Code):</strong> @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td colspan="3">
+                    <strong>@Html.DisplayNameFor(model => item.Description):</strong> @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+            @foreach (var cart in item.CartRows)
+            {
+            <tr>
+                <td></td>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => cart.Quantity):</strong> @Html.DisplayFor(modelItem => cart.Quantity)
+</td>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => cart.SerialNumber):</strong> @Html.DisplayFor(modelItem => cart.SerialNumber)
+</td>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => cart.Location):</strong> @Html.DisplayFor(modelItem => cart.Location.Code)
+</td>
+                <td>
+                    <strong>@Html.DisplayNameFor(model => cart.StokPosition):</strong> @Html.DisplayFor(modelItem => cart.StokPosition.Code)
+</td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+}

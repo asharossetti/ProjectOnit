@@ -140,8 +140,6 @@ C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\bin\Debug\netcoreapp3.1\runt
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.RazorAssemblyInfo.cache
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.RazorAssemblyInfo.cs
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.TagHelpers.input.cache
@@ -171,6 +169,7 @@ C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\stat
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.dll
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.pdb
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.genruntimeconfig.cache
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
 C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Cart\Edit.cshtml.g.cs
-C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\ProductFromCart\Index.cshtml.g.cs
+C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Service.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Asha Rossetti\Projects\ProjectOnit\Service\obj\Debug\netcoreapp3.1\Razor\Pages\Warehouse\Index.cshtml.g.cs

@@ -2,77 +2,77 @@
 @model Service.Pages.Cart.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cart";
 }
 
-<h1>Index</h1>
+    <h1>Cart</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].Arrive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].SerialNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].StokPosition)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart[0].Location)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Cart)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Arrive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SerialNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StokPosition.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location.Code)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+</p>@foreach (var item in Model.Cart)
+{
+    <table class="table table-bordered mb-3">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => item.Arrive)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.SerialNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.CreatedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.StokPosition)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Location)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Arrive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StokPosition.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location.Code)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
             @if (item.Rows.Count > 0)
             {
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.Product)</th>
-                <th>@Html.DisplayNameFor(model => model.Row.Quantity)</th>
-            </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Product)</th>
+                    <th>@Html.DisplayNameFor(model => model.Row.Quantity)</th>
+                </tr>
                 @foreach (var riga in item.Rows)
                 {
                     <tr>
@@ -82,9 +82,11 @@
                         <td>
                             @Html.DisplayFor(modelItem => riga.Quantity)
                         </td>
-                    </tr> 
+                    </tr>
+
                 }
+
             }
-        }
         </tbody>
     </table>
+    }
